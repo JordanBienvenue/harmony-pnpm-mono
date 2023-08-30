@@ -55,3 +55,10 @@ Before you begin, make sure you have the following tools installed on your syste
 `pnpm-workspace.yaml`
 : Configuration file for the PNPM workspace setup.
 
+
+## Commands
+import private package to site
+
+```bash
+pnpm add <package-name> --filter <site-name> --workspace
+```

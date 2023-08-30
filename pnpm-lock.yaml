@@ -8,6 +8,12 @@ importers:
 
   .: {}
 
+  packages/shared-ui:
+    dependencies:
+      astro:
+        specifier: ^2.10.14
+        version: 2.10.14
+
   packages/styles:
     dependencies:
       autoprefixer:
@@ -31,6 +37,9 @@ importers:
       astro:
         specifier: ^2.10.14
         version: 2.10.14
+      shared-ui:
+        specifier: workspace:^
+        version: link:../../packages/shared-ui
       tailwindcss:
         specifier: ^3.3.3
         version: 3.3.3
