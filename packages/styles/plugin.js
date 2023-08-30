@@ -2,11 +2,11 @@ const plugin = require('tailwindcss/plugin');
 
 module.exports = plugin(function ({ }) { }, {
     theme: {
-        // fontSize: {
-        //     sm: 16,
-        //     md: 24,
-        //     lg: 32
-        // },
+        fontSize: {
+            sm: 16,
+            md: 24,
+            lg: 32
+        },
         colors: {
             yellow: {
                 300: '#F0DB4F'
