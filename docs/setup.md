@@ -42,7 +42,13 @@ Before you begin, make sure you have the following tools installed on your syste
 
 2. Open a browser window and navigate to `http://localhost:3000` to view the project.
 
-
+3. build 
+   
+      ```bash
+      pnpm --filter <siteName> build
+      ```
+   
+      Example - `pnpm --filter beryl build`
 ## Project Structure
 
 
