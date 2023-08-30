@@ -1,4 +1,4 @@
-# HarmonyMonolith Project Setup Guide
+# Project Setup Guide
 
 Welcome to the mono-repo project setup guide. In this guide, we'll walk you through the steps to set up the project on your local machine.
 
