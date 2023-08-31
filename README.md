@@ -40,6 +40,11 @@ A changeset is a piece of information about changes made in a branch or commit. 
 3. Commit the changes.
 4. Run `pnpm publish -r`. This command will publish all packages that have bumped versions not yet present in the registry.
 
-## Automating Changesets
+# Automated approaches
 
-Do we want a blocking or non blocking approach ?
+## Changeset bot
+
+Changeset bot is available on each PR
+More info here: https://github.com/apps/changeset-bot
+
+## Changeset github action
