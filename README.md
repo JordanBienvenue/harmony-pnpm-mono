@@ -28,7 +28,7 @@ A changeset is a piece of information about changes made in a branch or commit. 
 
 ## Adding a changeset
 
-1. Run the command `pnpm changeset`
+1. Run the command `pnpm changeset` or `pnpm changeset --empty` without doing any releases.
 2. Select the packages you want to include in the changeset using ↑ and ↓ to navigate to packages, and space to select a package. Hit enter when all desired packages are selected.
 3. You will be prompted to select a bump type for each selected package. Select an appropriate bump type for the changes made.
 4. Your final prompt will be to provide a message to go alongside the changeset.
@@ -39,3 +39,7 @@ A changeset is a piece of information about changes made in a branch or commit. 
 2. Run pnpm install. This will update the lockfile and rebuild packages.
 3. Commit the changes.
 4. Run `pnpm publish -r`. This command will publish all packages that have bumped versions not yet present in the registry.
+
+## Automating Changesets
+
+Do we want a blocking or non blocking approach ?
