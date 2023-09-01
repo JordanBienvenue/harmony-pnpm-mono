@@ -1,14 +1,12 @@
-import { defineConfig } from 'astro/config';
-import tailwind from '@astrojs/tailwind';
-import { default as tailwindConfig } from '@harmony/styles/tailwind.config.cjs';
-
+import { defineConfig } from "astro/config";
+import tailwind from "@astrojs/tailwind";
+import { tailwindConfig } from "@harmony/shared-styles";
 
 // https://astro.build/config
 export default defineConfig({
-    integrations: [
-        tailwind({
-            // Example: Provide a custom path to a Tailwind config file
-            configFile: tailwindConfig
-        }),
-    ],
+	integrations: [
+		tailwind({
+			configFile: tailwindConfig,
+		}),
+	],
 });

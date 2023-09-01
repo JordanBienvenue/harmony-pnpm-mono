@@ -3,12 +3,12 @@ interface Props {
   title: string;
 }
 
-import Header from "shared-ui/src/components/Header.astro";
+import { Header } from "@harmony/shared-ui/header";
 
 const { title } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
