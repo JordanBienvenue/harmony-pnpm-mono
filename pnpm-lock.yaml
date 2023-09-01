@@ -54,11 +54,7 @@ importers:
         specifier: ^3.3.3
         version: 3.3.3
 
-  packages/shared-ui:
-    dependencies:
-      astro:
-        specifier: ^2.10.14
-        version: 2.10.14
+  packages/shared-ui/header: {}
 
   sites/beryl:
     dependencies:
@@ -68,9 +64,9 @@ importers:
       '@harmony/shared-styles':
         specifier: workspace:^
         version: link:../../packages/shared-styles
-      '@harmony/shared-ui':
+      '@harmony/shared-ui-header':
         specifier: workspace:^
-        version: link:../../packages/shared-ui
+        version: link:../../packages/shared-ui/header
       astro:
         specifier: ^2.10.14
         version: 2.10.14

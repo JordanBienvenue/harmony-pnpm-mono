@@ -1,5 +1,5 @@
 packages:
-  - 'sites/*'
-  - 'packages/*'
+  - 'sites/**/*'
+  - 'packages/**/*'
   # - '!**/test/**'
 

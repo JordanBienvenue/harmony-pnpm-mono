@@ -12,8 +12,8 @@
   "dependencies": {
     "@astrojs/tailwind": "^4.0.0",
     "@harmony/shared-styles": "workspace:^",
+    "@harmony/shared-ui-header": "workspace:^",
     "astro": "^2.10.14",
-    "@harmony/shared-ui": "workspace:^",
     "tailwindcss": "^3.3.3"
   }
 }
