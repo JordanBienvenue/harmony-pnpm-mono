@@ -2,39 +2,56 @@ name: Release
 
 on:
   push:
-  paths:
-      - ".changeset/**"
-      - "sites/**"
-      - "packages/**"
     branches:
       - main
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
+env:
+  CI: true
+  PNPM_CACHE_FOLDER: .pnpm-store
 jobs:
-  release:
+  version:
+    timeout-minutes: 15
     name: Release
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repo
+      - name: Checkout code repository
         uses: actions/checkout@v3
-        
+        with:
+          fetch-depth: 0
+
       - name: Setup PNPM
         uses: pnpm/action-setup@v2
 
-      - name: Setup Node
+      - name: Setup node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
           cache: "pnpm"
 
+      - name: Install pnpm
+        run: npm i pnpm@latest -g
+
+      - name: Setup npmrc
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
+
+      - name: Setup pnpm config
+        run: pnpm config set store-dir $PNPM_CACHE_FOLDER
+
       - name: Install dependencies
         run: pnpm install
 
-      - name: Build Packages
-        run: pnpm run build
-
-      - name: Create Release Pull Request
+      - name: Create and publish versions
         uses: changesets/action@v1
+         with:
+          version: pnpm ci:version
+          commit: "chore: update versions"
+          title: "chore: update versions"
+          publish: pnpm ci:publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+        - name: Do something after we publish a new version
+        if: steps.changesets.outputs.published == 'true'
+        run: echo "New version published!"
